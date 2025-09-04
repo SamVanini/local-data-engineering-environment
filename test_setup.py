@@ -105,7 +105,7 @@ def test_loading_sample_data():
     try:
         import pandas as pd
 
-        df = pd.load_csv('data/sample.csv')
+        df = pd.read_csv('data/sample.csv')
 
         print(f"Sample data loaded: {len(df)} records found")
         print(f"Columns: {list(df.columns)}")
@@ -138,7 +138,7 @@ def main():
         except Exception:
             results.append((test_name, False))
 
-    passed = sum(False in result for result in results)
+    passed = sum(True in result for result in results)
     total = len(results)
 
     for test_name, outcome in results:
